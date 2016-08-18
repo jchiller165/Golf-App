@@ -45,7 +45,7 @@ public class MainController {
 
 	        securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-	        return "redirect:/welcome";
+	        return "redirect:/home";
 	    }
 
 	    @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -58,7 +58,7 @@ public class MainController {
 	        return "login";
 	    }
 
-	    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
+	    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
 	    public String welcome(Model model) { 
 	    	String curUser = SecurityContextHolder.getContext().getAuthentication().getName();
 	    	model.addAttribute("email", userService.findByUsername(curUser).getEmail());
