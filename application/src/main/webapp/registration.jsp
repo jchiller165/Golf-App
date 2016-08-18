@@ -89,7 +89,16 @@
 					<form:errors path="email"></form:errors>
 				</div>
 			</spring:bind>
-
+			
+			<spring:bind path="userType">
+				<div class="form-group ${status.error ? 'has-error' : ''}" style="margin: 8px">
+				<h4>Select User Type</h4>
+					<form:checkbox path="userType" value="Instructor" label="Instructor" />
+					<form:checkbox path="userType" value=" Player" label="Player"/>
+					<form:errors path="userType"></form:errors>
+				</div>
+			</spring:bind>
+			
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
 		</form:form>
 
@@ -100,3 +109,5 @@
 	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
