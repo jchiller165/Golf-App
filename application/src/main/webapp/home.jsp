@@ -22,7 +22,7 @@
 <body>
 
 	<nav class="navbar navbar-dark bg-primary navbar-inverse">
-		<a class="navbar-brand" href="#" style="color: white;">My Golf Pro</a>
+		<a class="navbar-brand" href="home" style="color: white;">My Golf Pro</a>
 		<ul class="nav navbar-nav" style="float: right;">
 			<li><a href="instruction" class="nav-link" style="color: white;">Instruction</a></li>
 			<li><a href="videos" class="nav-link" style="color: white;">Videos</a></li>
@@ -32,11 +32,11 @@
 				data-toggle="dropdown" style="color: white;">${fName } ${lName }<b
 					class="caret"></b></a>
 				<ul class="dropdown-menu">
-					<li><a href="welcome" class="nav-link">Home</a></li>
+					<li><a href="home" class="nav-link">Home</a></li>
 					<li class="divider"></li>
-					<li><a href="#" class="nav-link">About</a></li>
+					<li><a href="home" class="nav-link">About</a></li>
 					<li class="divider"></li>
-					<li><a href="#" class="nav-link">Settings</a></li>
+					<li><a href="home" class="nav-link">Settings</a></li>
 					<li class="divider"></li>
 					<li class="nav-item"><a class="nav-link" href=""
 						onclick="document.forms['logoutForm'].submit()">Logout</a></li>
