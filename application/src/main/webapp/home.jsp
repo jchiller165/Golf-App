@@ -21,10 +21,13 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-dark bg-primary">
-		<a class="navbar-brand" href="#" style="color: white;">Justin's
-			App</a>
+	<nav class="navbar navbar-dark bg-primary navbar-inverse">
+		<a class="navbar-brand" href="#" style="color: white;">My Golf Pro</a>
 		<ul class="nav navbar-nav" style="float: right;">
+			<li><a href="instruction" class="nav-link" style="color: white;">Instruction</a></li>
+			<li><a href="videos" class="nav-link" style="color: white;">Videos</a></li>
+			<li><a href="postScore" class="nav-link" style="color: white;">Post Score</a></li>
+			<li><a href="newsFeed" class="nav-link" style="color: white;">News Feed</a></li>
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown" style="color: white;">${fName } ${lName }<b
 					class="caret"></b></a>
@@ -34,10 +37,10 @@
 					<li><a href="#" class="nav-link">About</a></li>
 					<li class="divider"></li>
 					<li><a href="#" class="nav-link">Settings</a></li>
+					<li class="divider"></li>
+					<li class="nav-item"><a class="nav-link" href=""
+						onclick="document.forms['logoutForm'].submit()">Logout</a></li>
 				</ul></li>
-			<li class="nav-item"><a class="nav-link" href=""
-				onclick="document.forms['logoutForm'].submit()"
-				style="color: white;">Logout</a></li>
 		</ul>
 	</nav>
 	<div class="container" style="text-align: left;">
@@ -54,7 +57,6 @@
 		<center>
 			<h1>Welcome: ${fName }!</h1>
 			<h1>Welcome: ${userType }!</h1>
-			<h1>Welcome: ${skillLevel }!</h1>
 		</center>
 	</div>
 

@@ -22,9 +22,8 @@
 
 <body>
 
-	<nav class="navbar navbar-dark bg-primary">
-		<a class="navbar-brand" href="#" style="color: white;">Justin's
-			App</a>
+	<nav class="navbar navbar-dark bg-primary navbar-inverse">
+		<a class="navbar-brand" href="#" style="color: white;">My Golf Pro</a>
 		<ul class="nav navbar-nav" style="float: right;">
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown" style="color: white;"><b

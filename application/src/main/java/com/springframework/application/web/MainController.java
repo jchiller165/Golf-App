@@ -73,7 +73,26 @@ public class MainController {
 	    	model.addAttribute("fName", userService.findByUsername(curUser).getfName());
 	    	model.addAttribute("lName", userService.findByUsername(curUser).getlName());
 	    	model.addAttribute("userType", userService.findByUsername(curUser).getUserType());	    
-	    	//model.addAttribute("skillLevel", userService.findByUsername(curUser).getSkillLevel());
 	        return "home";
+	    }
+	    
+	    @RequestMapping(value = "/instruction", method = RequestMethod.GET)
+	    public String instruction(Model model) {
+	    	return "instruction";
+	    }
+	    
+	    @RequestMapping(value = "/videos", method = RequestMethod.GET)
+	    public String videos(Model model) {
+	    	return "videos";
+	    }
+	    
+	    @RequestMapping(value = "/postScore", method = RequestMethod.GET)
+	    public String postScore(Model model) {
+	    	return "postScore";
+	    }
+	    
+	    @RequestMapping(value = "/newsFeed", method = RequestMethod.GET)
+	    public String newsFeed(Model model) {
+	    	return "newsFeed";
 	    }
 }
