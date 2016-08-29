@@ -22,9 +22,8 @@
 
 <body>
 
-	<nav class="navbar navbar-dark bg-primary">
-		<a class="navbar-brand" href="#" style="color: white;">Justin's
-			App</a>
+	<nav class="navbar navbar-dark bg-primary navbar-inverse">
+		<a class="navbar-brand" href="#" style="color: white;">My Golf Pro</a>
 		<ul class="nav navbar-nav" style="float: right;">
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown" style="color: white;"><b
@@ -89,7 +88,16 @@
 					<form:errors path="email"></form:errors>
 				</div>
 			</spring:bind>
-
+			
+			<spring:bind path="userType">
+				<div class="form-group ${status.error ? 'has-error' : ''}" style="margin: 8px">
+				<h4>Select User Type</h4>
+					<form:checkbox path="userType" value="Instructor" label="Instructor" />
+					<form:checkbox path="userType" value=" Player" label="Player"/>
+					<form:errors path="userType"></form:errors>
+				</div>
+			</spring:bind>
+			
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
 		</form:form>
 
@@ -100,3 +108,5 @@
 	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

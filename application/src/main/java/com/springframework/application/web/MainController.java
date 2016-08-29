@@ -1,5 +1,7 @@
 package com.springframework.application.web;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -29,6 +31,12 @@ public class MainController {
 	    @RequestMapping(value = "/registration", method = RequestMethod.GET)
 	    public String registration(Model model) {
 	        model.addAttribute("userForm", new User());
+	        ArrayList<Integer> handicap = new ArrayList<>();
+	        for (int i = -5; i < 50; i++){
+	        	handicap.add(i);
+	        }
+	        
+	        model.addAttribute("handicap", handicap);
 
 	        return "registration";
 	    }
@@ -64,7 +72,27 @@ public class MainController {
 	    	model.addAttribute("email", userService.findByUsername(curUser).getEmail());
 	    	model.addAttribute("fName", userService.findByUsername(curUser).getfName());
 	    	model.addAttribute("lName", userService.findByUsername(curUser).getlName());
-	    	
+	    	model.addAttribute("userType", userService.findByUsername(curUser).getUserType());	    
 	        return "home";
+	    }
+	    
+	    @RequestMapping(value = "/instruction", method = RequestMethod.GET)
+	    public String instruction(Model model) {
+	    	return "instruction";
+	    }
+	    
+	    @RequestMapping(value = "/videos", method = RequestMethod.GET)
+	    public String videos(Model model) {
+	    	return "videos";
+	    }
+	    
+	    @RequestMapping(value = "/postScore", method = RequestMethod.GET)
+	    public String postScore(Model model) {
+	    	return "postScore";
+	    }
+	    
+	    @RequestMapping(value = "/newsFeed", method = RequestMethod.GET)
+	    public String newsFeed(Model model) {
+	    	return "newsFeed";
 	    }
 }
