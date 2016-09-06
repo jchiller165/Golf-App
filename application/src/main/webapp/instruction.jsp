@@ -52,13 +52,20 @@
 			</form>
 		</c:if>
 	</div>
-
+	
 	<div class="container">
-		<center>			
-			<c:forEach  items="${instructors}" var="instructor">
-				<c:out value="${instructor.fName }"></c:out>
+		<div class="instructorContainer">
+			<c:forEach items="${instructors}" var="instructor">
+				<div class="col-sm-3 col-md-3 col-lg-3 text-center" style="margin: 15px; background:#4da6ff; padding: 15px;" ><br>
+				<center>
+					Instructor Name: ${instructor.fName } ${instructor.lName }<br>
+					Email: ${instructor.email }<br>
+					Username: ${instructor.username }
+				</center>
+					<input type="button" class="btn btn-primary btn-block" value="View Profile">
+				</div>
 			</c:forEach>
-		</center>
+		</div>
 	</div>
 
 	<!-- /container -->

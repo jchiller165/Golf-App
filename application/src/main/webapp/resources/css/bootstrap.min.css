@@ -11,7 +11,8 @@ html {
 
 body {
     margin: 0;
-    padding-top: 0;    
+    padding-top: 0; 
+    background-color: #99ff99;   
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
