@@ -1,5 +1,4 @@
 package com.springframework.application.web;
-
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,13 +30,6 @@ public class MainController {
 	    @RequestMapping(value = "/registration", method = RequestMethod.GET)
 	    public String registration(Model model) {
 	        model.addAttribute("userForm", new User());
-	        ArrayList<Integer> handicap = new ArrayList<>();
-	        for (int i = -5; i < 50; i++){
-	        	handicap.add(i);
-	        }
-	        
-	        model.addAttribute("handicap", handicap);
-
 	        return "registration";
 	    }
 
@@ -50,7 +42,6 @@ public class MainController {
 	        }
 
 	        userService.save(userForm);
-
 	        securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
 	        return "redirect:/home";
@@ -67,17 +58,29 @@ public class MainController {
 	    }
 
 	    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
-	    public String welcome(Model model) { 
+	    public String welcome(Model model) { 	    	
 	    	String curUser = SecurityContextHolder.getContext().getAuthentication().getName();
-	    	model.addAttribute("email", userService.findByUsername(curUser).getEmail());
-	    	model.addAttribute("fName", userService.findByUsername(curUser).getfName());
-	    	model.addAttribute("lName", userService.findByUsername(curUser).getlName());
-	    	model.addAttribute("userType", userService.findByUsername(curUser).getUserType());	    
+	    	User user = userService.findByUsername(curUser);
+	    	
+	    	model.addAttribute("email", user.getEmail());
+	    	model.addAttribute("fName", user.getfName());
+	    	model.addAttribute("lName", user.getlName());
+	    	model.addAttribute("userType", user.getUserType());	 
+	    	
 	        return "home";
 	    }
 	    
 	    @RequestMapping(value = "/instruction", method = RequestMethod.GET)
 	    public String instruction(Model model) {
+	    	String curUser = SecurityContextHolder.getContext().getAuthentication().getName();
+	    	User user = userService.findByUsername(curUser);
+	    	ArrayList<User> instructors = userService.findInstructors();
+	    	
+	    	model.addAttribute("email", user.getEmail());
+	    	model.addAttribute("fName", user.getfName());
+	    	model.addAttribute("lName", user.getlName());	    	
+	    	model.addAttribute("instructors", instructors);
+	    	
 	    	return "instruction";
 	    }
 	    
@@ -88,6 +91,12 @@ public class MainController {
 	    
 	    @RequestMapping(value = "/postScore", method = RequestMethod.GET)
 	    public String postScore(Model model) {
+	    	String curUser = SecurityContextHolder.getContext().getAuthentication().getName();
+	    	User user = userService.findByUsername(curUser);
+	    	
+	    	model.addAttribute("fName", user.getfName());
+	    	model.addAttribute("userType", user.getUserType());
+	    	
 	    	return "postScore";
 	    }
 	    
