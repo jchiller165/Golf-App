@@ -54,9 +54,10 @@
 	</div>
 
 	<div class="container">
-		<center>
-			<h1>Welcome: ${fName }!</h1>
-			<h1>Welcome: ${userType }!</h1>
+		<center>			
+			<c:forEach  items="${instructors}" var="instructor">
+				<c:out value="${instructor.fName }"></c:out>
+			</c:forEach>
 		</center>
 	</div>
 

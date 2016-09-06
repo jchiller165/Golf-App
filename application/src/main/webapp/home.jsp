@@ -55,7 +55,7 @@
 
 	<div class="container">
 		<center>
-			<h1>Welcome: ${fName }!</h1>
+			<h1>Welcome: ${fName } ${lName}!</h1>
 			<h1>Welcome: ${userType }!</h1>
 		</center>
 	</div>
