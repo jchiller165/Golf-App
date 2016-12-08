@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.springframework.application.authentication.model.User;
 import com.springframework.application.authentication.service.SecurityService;
@@ -103,5 +104,11 @@ public class MainController {
 	    @RequestMapping(value = "/newsFeed", method = RequestMethod.GET)
 	    public String newsFeed(Model model) {
 	    	return "newsFeed";
+	    }
+	    
+	    @RequestMapping(value = "/instructorProfile/{id}", method = RequestMethod.GET)
+	    public String instructorProfile(@RequestParam String id, Model model) {
+	    	System.out.println(id);
+	    	return "home";
 	    }
 }

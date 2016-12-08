@@ -59,10 +59,10 @@
 				<div class="col-sm-3 col-md-3 col-lg-3 text-center" style="margin: 15px; background:#4da6ff; padding: 15px;" ><br>
 				<center>
 					Instructor Name: ${instructor.fName } ${instructor.lName }<br>
-					Email: ${instructor.email }<br>
-					Username: ${instructor.username }
+					Email:           ${instructor.email }<br>
+					Username:        ${instructor.username }
 				</center>
-					<input type="button" class="btn btn-primary btn-block" value="View Profile">
+					<input type="button" class="btn btn-primary btn-block" value="View Profile" onclick="location.href='instructorProfile/${instructor.username}'">
 				</div>
 			</c:forEach>
 		</div>
